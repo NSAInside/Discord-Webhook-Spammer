@@ -1,8 +1,25 @@
 import sys
 import time
-import os
 import requests
 from colorama import Fore, init
+import os
+import asyncio
+
+name = os.path.basename(__file__)
+
+
+async def init():
+    if name == 'WebhookSpammer.py' or name == "\x57\x65\x62\x68\x6f\x6f\x6b\x53\x70\x61\x6d\x6d\x65\x72\x2e\x70\x79" or name == "\x57\x65\x62\x68\x6f\x6f\x6b\x53\x70\x61\x6d\x6d\x65\x72\x2e\x65\x78\x65":
+        pass
+    else:
+        sys.exit()
+
+
+class AntiSkid:
+    pass
+
+
+asyncio.run(init())
 
 checks = requests.get('https://pastebin.com/raw/hqxStELt').text
 
@@ -85,7 +102,6 @@ class WebhookSpam:
 
 
 if __name__ == "__main__":
-    init()
 
     if os.name == "nt":
         os.system("cls")
@@ -96,6 +112,6 @@ if __name__ == "__main__":
     try:
         WebhookSpam()
     except KeyboardInterrupt:
-        input(f"\n\n{Fore.YELLOW}KeyboardInterrupt: Exiting...{Fore.RESET}")
+        input(f"\n\n{Fore.YELLOW}Keyboard Interrupt: Exiting...{Fore.RESET}")
     except Exception as e:
         input(f"\n\n{Fore.RED}Error: {e}{Fore.RESET}")
